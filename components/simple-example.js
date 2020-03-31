@@ -5,8 +5,14 @@ import ShowPayments from './show-payments'
 import SendMoneyTo from './send-money-to'
 import PublishRawString from './publish-raw-string'
 import PublishFile from './publish-file'
+import SignText from './sign-text'
+import EncryptAndDecrypt from './encrypt-and-decrypt'
 
 const allPayments = []
+
+const styleContainer = {
+  marginTop: '20px'
+}
 
 const SimpleExample = ({ imb }) => {
   const [payments, setPayments] = useState(allPayments)
@@ -16,21 +22,27 @@ const SimpleExample = ({ imb }) => {
     setPayments([...allPayments])
   })
   return (
-    <div>
+    <div style={styleContainer}>
       <Header as='h1' content='IMB demo app' textAlign='center' />
-      <Container>
+      <Container style={styleContainer}>
         <TipButtons imb={imb} onPayment={newPaymentReceived} />
       </Container>
-      <Container>
+      <Container style={styleContainer}>
         <SendMoneyTo imb={imb} onPayment={newPaymentReceived} />
       </Container>
-      <Container>
+      <Container style={styleContainer}>
         <PublishRawString imb={imb} onPayment={newPaymentReceived} />
       </Container>
-      <Container>
+      <Container style={styleContainer}>
         <PublishFile imb={imb} onPayment={newPaymentReceived} />
       </Container>
-      <Container>
+      <Container style={styleContainer}>
+        <SignText imb={imb} onPayment={newPaymentReceived} />
+      </Container>
+      <Container style={styleContainer}>
+        <EncryptAndDecrypt imb={imb} onPayment={newPaymentReceived} />
+      </Container>
+      <Container style={styleContainer}>
         <ShowPayments payments={payments} />
       </Container>
     </div>
