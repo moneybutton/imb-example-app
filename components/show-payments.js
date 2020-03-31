@@ -12,13 +12,13 @@ const ShowPayments = ({ payments }) => {
   return (
     <div>
       <Card.Group>
-        {payments.map((payment, i) => 
+        {payments.map((payment, i) =>
           <Card key={payment.id}>
             <Card.Content>
-        <Card.Header>Payment {i}</Card.Header>
+              <Card.Header>Payment {i + 1}</Card.Header>
               <Card.Meta style={metaStyle}>{payment.txid}</Card.Meta>
               <Card.Description>
-                {payment.paymentOutputs.map(output => <ReceiverLabel output={output} /> )}
+                {payment.paymentOutputs.map(output => <ReceiverLabel output={output} key={output.id} />)}
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
