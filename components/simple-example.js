@@ -6,12 +6,14 @@ import SendMoneyTo from './send-money-to'
 import PublishRawString from './publish-raw-string'
 import PublishFile from './publish-file'
 
-const initialPayments = []
+const allPayments = []
 
 const SimpleExample = ({ imb }) => {
-  const [payments, setPayments] = useState(initialPayments)
+  const [payments, setPayments] = useState(allPayments)
   const newPaymentReceived = useCallback(newPayment => {
-    setPayments([...payments, newPayment])
+    allPayments.push(newPayment)
+    console.log('allPayments', allPayments)
+    setPayments([...allPayments])
   })
   return (
     <div>
@@ -26,10 +28,10 @@ const SimpleExample = ({ imb }) => {
         <PublishRawString imb={imb} onPayment={newPaymentReceived} />
       </Container>
       <Container>
-        <PublishFile imb={imb} />
+        <PublishFile imb={imb} onPayment={newPaymentReceived} />
       </Container>
       <Container>
-        <ShowPayments payments={payments} onPayment={newPaymentReceived} />
+        <ShowPayments payments={payments} />
       </Container>
     </div>
   )
