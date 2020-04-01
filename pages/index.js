@@ -5,7 +5,6 @@ import SimpleExample from '../components/simple-example'
 const Home = () => {
   const [imb, setImb] = useState(null)
   useEffect(() => {
-    console.log(process.env.clientIdentifier)
     setImb(new moneyButton.IMB({
       clientIdentifier: process.env.clientIdentifier
     }))

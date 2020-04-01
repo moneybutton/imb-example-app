@@ -3,16 +3,20 @@ import { Button, Header } from 'semantic-ui-react'
 
 const TipButtons = ({ imb, onPayment }) => {
   const makeTip = async (amount) => {
-    const payment = await imb.swipe({
-      outputs: [
-        {
-          to: '5@moneybuttonstaging.com',
-          currency: 'USD',
-          amount
-        }
-      ]
-    })
-    onPayment(payment)
+    try {
+      const payment = await imb.swipe({
+        outputs: [
+          {
+            to: '5@moneybuttonstaging.com',
+            currency: 'USD',
+            amount
+          }
+        ]
+      })
+      onPayment(payment)
+    } catch (e) {
+      console.error(e)
+    }
   }
   
   return (
