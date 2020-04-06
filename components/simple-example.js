@@ -7,6 +7,7 @@ import PublishRawString from './publish-raw-string'
 import PublishFile from './publish-file'
 import SignText from './sign-text'
 import EncryptAndDecrypt from './encrypt-and-decrypt'
+import ClearSession from './clear-session'
 
 const allPayments = []
 
@@ -24,6 +25,9 @@ const SimpleExample = ({ imb }) => {
   return (
     <div style={styleContainer}>
       <Header as='h1' content='IMB demo app' textAlign='center' />
+      <Container style={styleContainer}>
+        <ClearSession />
+      </Container>
       <Container style={styleContainer}>
         <TipButtons imb={imb} onPayment={newPaymentReceived} />
       </Container>

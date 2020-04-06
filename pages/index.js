@@ -6,7 +6,9 @@ const Home = () => {
   const [imb, setImb] = useState(null)
   useEffect(() => {
     setImb(new moneyButton.IMB({
-      clientIdentifier: process.env.clientIdentifier
+      clientIdentifier: process.env.clientIdentifier,
+      onNewPermissionGranted: (permissionCode) => localStorage.setItem('auth-token', permissionCode),
+      permission: localStorage.getItem('auth-token')
     }))
   }, [])
   return (
