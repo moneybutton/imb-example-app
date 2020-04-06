@@ -5,7 +5,7 @@ const PublishRawString = ({ imb, onPayment }) => {
   const [data, setData] = useState('')
   const send = async (e) => {
     e.preventDefault()
-    const payment = await imb.swipe({
+    const { payment } = await imb.swipe({
       outputs: [
         {
           script: `OP_FALSE OP_RETURN ${Buffer.from(data).toString('hex')}`,

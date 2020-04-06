@@ -6,7 +6,7 @@ const SignText = ({ imb, onPayment }) => {
   const [text, setText] = useState('hello')
   const [signature, setSignature] = useState('')
   const sign = async () => {
-    const payment = await imb.swipe({
+    const { payment } = await imb.swipe({
       outputs: [
         {
           to: '5@moneybuttonstaging.com',

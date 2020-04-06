@@ -34,7 +34,7 @@ const PublishFile = ({ imb, onPayment }) => {
     const payments = []
     setUploadStarted(true)
     for (let chunk of fileToUpload.chunks) {
-      const payment = await imb.swipe({
+      const { payment } = await imb.swipe({
         outputs: [
           {
             script: bsv.Script.buildSafeDataOut(['1ChDHzdd1H4wSjgGMHyndZm6qxEDGjqpJL', chunk]).toASM(),
@@ -47,7 +47,7 @@ const PublishFile = ({ imb, onPayment }) => {
       onPayment(payment)
       setProcessedChunks(payments.length)
     }
-    const finalPayment = await imb.swipe({
+    const { payment: finalPayment } = await imb.swipe({
       outputs: [{
         script: bsv.Script.buildSafeDataOut([
           Buffer.from('15DHFxWZJT58f9nhyGnsRBqrgwK4W6h4Up'), 

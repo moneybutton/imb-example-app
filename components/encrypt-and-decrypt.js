@@ -6,7 +6,7 @@ const EncryptAndDecrypt = ({ imb, onPayment }) => {
   const [rawText, setRawText] = useState('hello')
   const [encripted, setEncripted] = useState('')
   const encrypt = async () => {
-    const payment = await imb.swipe({
+    const { payment } = await imb.swipe({
       outputs: [
         {
           to: '5@moneybuttonstaging.com',
@@ -34,7 +34,7 @@ const EncryptAndDecrypt = ({ imb, onPayment }) => {
   }
 
   const decrypt = async () => {
-    const payment = await imb.swipe({
+    const { payment } = await imb.swipe({
       outputs: [
         {
           to: '5@moneybuttonstaging.com',
