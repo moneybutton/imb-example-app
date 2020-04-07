@@ -7,7 +7,7 @@ const MainLayout = ({ children }) => (
       <title>IMB example</title>
       <link rel="icon" href="/favicon.ico" />
       <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-      <script src="https://moneybuttonstaging.com/moneybutton.js"></script>
+      <script src="https://www.moneybutton.com/moneybutton.js"></script>
     </Head>
     {children}
   </div>
