@@ -7,7 +7,7 @@ const ClearSession = () => {
   return (
     <>
       <Header as='h2'>Clear Session</Header>
-      <Button color='red' onClick={clearSession}>Claer</Button>
+      <Button color='red' onClick={clearSession}>Clear</Button>
     </>
   )
 }
