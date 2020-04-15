@@ -14,7 +14,7 @@ const SignText = ({ imb, onPayment }) => {
           amount: '0.01'
         },
         {
-          script: bsv.Script.buildSafeDataOut([text, '#{sigedText}']).toASM(),
+          script: bsv.Script.buildSafeDataOut([text, '#{signedText}']).toASM(),
           amount: '0',
           currency: 'USD'
         }
