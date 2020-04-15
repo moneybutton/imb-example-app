@@ -26,7 +26,7 @@ const ShowPayments = ({ payments }) => {
                 <Button as='a' rel='noopener noreferrer' target='_blank' href={`https://whatsonchain.com/tx/${payment.txid}`} basic color='yellow' icon>
                   <Icon name='search' />
                 </Button>
-                <Button as='a' rel='noopener noreferrer' target='_blank' href={`https://moneybuttonstaging.com/money/detail/payments/${payment.id}`} basic color='blue' icon>
+                <Button as='a' rel='noopener noreferrer' target='_blank' href={`https://www.moneybutton.com/money/detail/payments/${payment.id}`} basic color='blue' icon>
                   <Icon name='wordpress forms' />
                 </Button>
               </div>
