@@ -9,7 +9,7 @@ const SignText = ({ imb, onPayment }) => {
     const { payment } = await imb.swipe({
       outputs: [
         {
-          to: '5@moneybuttonstaging.com',
+          to: 'moneybutton@moneybutton.com',
           currency: 'USD',
           amount: '0.01'
         },
